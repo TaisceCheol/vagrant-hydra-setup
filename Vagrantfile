@@ -22,7 +22,7 @@ Vagrant.configure(2) do |config|
 
   # config.vm.synced_folder ".", "/vagrant", type: "nfs"
 
-	config.vm.synced_folder "src/", "/home/vagrant/hydra/itma.hydra",
+	config.vm.synced_folder "src/", "/home/vagrant/",
 	    :nfs => true,
 	    :mount_options => ['actimeo=2','rw', 'vers=3', 'tcp', 'nolock']
 
