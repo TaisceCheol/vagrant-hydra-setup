@@ -31,6 +31,7 @@ sudo su - postgres -c 'createuser -s vagrant'
 # java 8
 sudo add-apt-repository -y ppa:webupd8team/java
 sudo apt-get update
+echo "oracle-java8-installer shared/accepted-oracle-license-v1-1 select true" | sudo debconf-set-selections
 sudo apt-get install -y oracle-java8-installer
 
 
@@ -44,5 +45,6 @@ su - vagrant -c 'curl https://raw.githubusercontent.com/creationix/nvm/v0.14.0/i
 su - vagrant -c 'nvm install 0.10'
 su - vagrant -c 'nvm alias default 0.10'
 
+su - vagrant -c "mkdir -p /vagrant/hydra_projects/ && rails new itma.hydra.test"
 echo "All done installing!
 Next steps: type 'vagrant ssh' to log into the machine."
