@@ -45,6 +45,5 @@ su - vagrant -c 'curl https://raw.githubusercontent.com/creationix/nvm/v0.14.0/i
 su - vagrant -c 'nvm install 0.10'
 su - vagrant -c 'nvm alias default 0.10'
 
-su - vagrant -c "mkdir -p /vagrant/hydra_projects/ && rails new itma.hydra.test"
-echo "All done installing!
-Next steps: type 'vagrant ssh' to log into the machine."
+# echo "All done installing!
+# Next steps: type 'vagrant ssh' to log into the machine."

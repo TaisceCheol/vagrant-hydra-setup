@@ -33,4 +33,20 @@ Vagrant.configure(2) do |config|
 
   config.vm.provision :shell, path: "provision.sh"
 
+  config.vm.provision "shell", privileged: false, inline: <<-SHELL
+    if [ ! -d "/vagrant/hydra_projects/"]; then
+      echo 'making hydra_project_dir'
+      mkdir -p /vagrant/hydra_projects/ 
+    fi
+
+    echo 'generating rails project'
+    cd /vagrant/hydra_projects/
+
+    rails new itma.hydra.test
+ 
+    cd itma.hydra.test/
+
+    ls -l
+
+  SHELL
 end
