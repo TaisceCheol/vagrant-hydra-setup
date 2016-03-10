@@ -12,7 +12,8 @@ Vagrant.configure(2) do |config|
   config.vm.box = "ubuntu/trusty64"
 
   config.vm.provider "virtualbox" do |vb|
-    vb.memory = "1024"
+    vb.memory = 2048
+    vb.cpus = 2
   end
 
   # Create a forwarded port mapping which allows access to a specific port
@@ -30,13 +31,6 @@ Vagrant.configure(2) do |config|
 	    :nfs => true,
 	    :mount_options => ['actimeo=2','rw', 'vers=3', 'tcp', 'nolock']
 
-	config.vm.synced_folder "scripts/", "/vagrant/scripts/",
-	    :nfs => true,
-	    :mount_options => ['actimeo=2','rw', 'vers=3', 'tcp', 'nolock']
-
   config.vm.provision :shell, path: "provision.sh"
 
-  config.trigger.after :up do
-    run_remote "bash /vagrant/scripts/post_provision.sh"
-  end
 end

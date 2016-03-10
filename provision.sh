@@ -22,16 +22,16 @@ sudo sed -i "s/#listen_addresses = 'localhost'/listen_addresses = '*'/g" /etc/po
 sudo /etc/init.d/postgresql restart
 sudo su - postgres -c 'createuser -s vagrant'
 
-# redis
-sudo apt-get install -y python-software-properties
-sudo add-apt-repository -y ppa:rwky/redis
-sudo apt-get update
-sudo apt-get install -y redis-server
+# # redis
+# sudo apt-get install -y python-software-properties
+# sudo add-apt-repository -y ppa:rwky/redis
+# sudo apt-get update
+# sudo apt-get install -y redis-server
 
-# java
+# java 8
+sudo add-apt-repository -y ppa:webupd8team/java
 sudo apt-get update
-sudo apt-get install -y default-jre
-sudo apt-get install -y default-jdk
+sudo apt-get install -y oracle-java8-installer
 
 
 # rvm and ruby
