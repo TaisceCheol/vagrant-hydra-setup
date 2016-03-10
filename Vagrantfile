@@ -22,11 +22,11 @@ Vagrant.configure(2) do |config|
 
   # config.vm.synced_folder ".", "/vagrant", type: "nfs"
 
-	config.vm.synced_folder "src/", "/home/vagrant/",
+	config.vm.synced_folder "src/", "/vagrant/",
 	    :nfs => true,
 	    :mount_options => ['actimeo=2','rw', 'vers=3', 'tcp', 'nolock']
 
-	config.vm.synced_folder "scripts/", "/vagrant/scripts",
+	config.vm.synced_folder "scripts/", "/vagrant/scripts/",
 	    :nfs => true,
 	    :mount_options => ['actimeo=2','rw', 'vers=3', 'tcp', 'nolock']
 
