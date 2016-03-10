@@ -8,7 +8,7 @@ echo "syntax on" >> ~/.vimrc
 echo "set expandtab" >> ~/.vimrc
 
 # # initialize hydra rails project
-mkdir hydra && cd $_
+mkdir /vagrant/hydra && cd $_
 rails new itma.hydra && cd itma.hydra
 
 echo "gem 'therubyracer', platforms: :ruby" >> Gemfile && bundle install
@@ -21,7 +21,6 @@ echo "gem 'hydra', '9.1.0'" >> Gemfile && bundle install
 # git commit -m "Added Hydra dependency to Gemfile"
 
 rails generate hydra:install
-
 
 # git add .
 # git commit -m "Ran hydra generator"
